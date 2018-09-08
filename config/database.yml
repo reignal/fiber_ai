@@ -4,15 +4,17 @@ default: &default
   pool: 5
   timeout: 5000
   host: <%= ENV['DATA_DB_HOST'] %>
-  username: <%= ENV['DATA_DB_USER'] %>
-  password: <%= ENV['DATA_DB_PASS'] %>
+  username: <%= ENV.fetch('DATA_DB_USER', 'fiber_ai') %>
+  password: <%= ENV.fetch('DATA_DB_PASS', 'fiber_ai') %>
   database: gonano
 
 development:
   <<: *default
+  database: fiber_ai_development
 
 test:
   <<: *default
+  database: fiber_ai_test
 
 production:
   <<: *default
