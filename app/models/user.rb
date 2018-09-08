@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_secure_password
+  # conflicts  with devise
+  # has_secure_password
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   def self.new_with_session(params, session)
