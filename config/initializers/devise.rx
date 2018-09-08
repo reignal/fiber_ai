@@ -1,6 +1,0 @@
-
-Devise.setup do |config|
-  config.omniauth :facebook, ENV['FB_APP_ID'],
-                  ENV['FB_APP_SECRET'],
-                  callback_url: "http://fiber-ai.nanoapp.io//users/auth/facebook/callback"
-end
